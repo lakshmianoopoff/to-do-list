@@ -1,16 +1,107 @@
-# React + Vite
+# My Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, interactive To-Do List built with **React.js** and **Vite**. Allows users to add, complete, and delete tasks with a clean and minimal UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Add new tasks using the input field or by pressing `Enter`
+- Mark tasks as done by clicking the circle checkbox
+- Delete tasks with the remove button
+- Filter tasks by **All**, **Active**, or **Done**
+- Live progress bar showing completion percentage
+- Displays today's date dynamically
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+my-todo-app/
+├── index.html
+├── package.json
+├── vite.config.js
+└── src/
+    ├── main.jsx        # React entry point
+    ├── App.jsx         # Root component
+    ├── TodoApp.jsx     # Main Todo component (logic + JSX)
+    └── TodoApp.css     # All styles
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (version 16 or above)
+- npm (comes with Node.js)
+
+### Installation
+
+1. Clone or download this project into your local machine
+
+2. Open the project folder in VSCode
+
+3. Open the terminal (`Ctrl + ~`) and run:
+
+```bash
+npm install
+```
+
+### Running the App
+
+```bash
+npm run dev
+```
+
+Then open your browser and go to:
+
+```
+http://localhost:5173
+```
+
+---
+
+## Built With
+
+- [React.js](https://react.dev/) - UI library
+- [Vite](https://vitejs.dev/) - Fast build tool and dev server
+- [DM Sans](https://fonts.google.com/specimen/DM+Sans) & [DM Serif Display](https://fonts.google.com/specimen/DM+Serif+Display) - Google Fonts
+
+---
+
+## Usage
+
+| Action | How To |
+|---|---|
+| Add a task | Type in the input box and press `Enter` or click `+ Add` |
+| Complete a task | Click the circle button on the left of the task |
+| Delete a task | Click the × button on the right of the task |
+| Filter tasks | Click `All`, `Active`, or `Done` buttons |
+
+---
+
+## Common Issues
+
+**`Failed to load resource: index.css`**
+Remove the `import "./index.css"` line from `src/main.jsx` if the file does not exist.
+
+**`Already included file differs only in casing`**
+Delete any duplicate files with different casing (e.g. `Todoapp.jsx`) from the `src/` folder.
+
+**Vite cache error after renaming files**
+Run the following to clear the cache and restart:
+```bash
+rd /s /q node_modules\.vite
+npm run dev
+```
+
+---
+
+## License
+
+This project is open source and free to use for learning and personal projects.
