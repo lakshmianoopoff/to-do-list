@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f5f2ee;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.todo-wrapper {
+  width: 100%;
+  max-width: 540px;
+}
+
+/* Header */
+.todo-header {
+  margin-bottom: 2rem;
+}
+
+.todo-header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.6rem;
+  color: #1a1714;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.date-label {
+  font-size: 13px;
+  color: #9e9890;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Input Row */
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.task-input {
+  flex: 1;
+  height: 48px;
+  padding: 0 16px;
+  border: 1.5px solid #e2ddd8;
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  background: #fff;
+  color: #1a1714;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.task-input::placeholder {
+  color: #c0bab3;
+}
+
+.task-input:focus {
+  border-color: #c9a87c;
+}
+
+.add-btn {
+  height: 48px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 12px;
+  background: #1a1714;
+  color: #f5f2ee;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.add-btn:hover {
+  background: #2e2926;
+}
+
+.add-btn:active {
+  transform: scale(0.97);
+}
+
+/* Filters */
+.filter-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+}
+
+.filter-btn {
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1.5px solid #e2ddd8;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  background: transparent;
+  color: #9e9890;
+  transition: all 0.18s;
+}
+
+.filter-btn.active {
+  background: #1a1714;
+  border-color: #1a1714;
+  color: #f5f2ee;
+  font-weight: 500;
+}
+
+/* Task List */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1.5px solid #ede9e3;
+  border-radius: 14px;
+  transition: border-color 0.18s, opacity 0.2s;
+  animation: slideIn 0.22s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-card.done {
+  opacity: 0.5;
+}
+
+.task-card:hover {
+  border-color: #d4cec7;
+}
+
+/* Check Button */
+.check-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid #d4cec7;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.18s, border-color 0.18s;
+}
+
+.check-btn.checked {
+  background: #c9a87c;
+  border-color: #c9a87c;
+}
+
+/* Task Text */
+.task-text {
+  flex: 1;
+  font-size: 15px;
+  color: #1a1714;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.task-text.done {
+  text-decoration: line-through;
+  color: #b0aa9e;
+}
+
+/* Delete Button */
+.del-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c0bab3;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+
+.del-btn:hover {
+  background: #fdf0f0;
+  color: #c0392b;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #b0aa9e;
+  font-size: 14px;
+}
+
+/* Stats & Progress */
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.25rem;
+  font-size: 13px;
+  color: #9e9890;
+}
+
+.progress-bar-bg {
+  height: 3px;
+  background: #ede9e3;
+  border-radius: 999px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #c9a87c;
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
