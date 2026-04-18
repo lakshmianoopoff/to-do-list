@@ -85,22 +85,6 @@ http://localhost:5173
 
 ---
 
-## Common Issues
-
-**`Failed to load resource: index.css`**
-Remove the `import "./index.css"` line from `src/main.jsx` if the file does not exist.
-
-**`Already included file differs only in casing`**
-Delete any duplicate files with different casing (e.g. `Todoapp.jsx`) from the `src/` folder.
-
-**Vite cache error after renaming files**
-Run the following to clear the cache and restart:
-```bash
-rd /s /q node_modules\.vite
-npm run dev
-```
-
----
 
 ## License
 
